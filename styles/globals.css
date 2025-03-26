@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&display=swap');
 @import url("./syntax.css");
 @import url("./algolia.css");
 
 :root {
   font-variant-ligatures: none;
+  --font-family: 'Readex Pro', sans-serif;
 }
 
 @tailwind base;
@@ -73,11 +75,15 @@
 
   body {
     @apply bg-background text-foreground;
+    direction: rtl;
+    font-family: var(--font-family);
   }
 }
 
 .prose {
   margin: 0 !important;
+  direction: rtl;
+  text-align: right;
 }
 
 pre {
@@ -175,4 +181,14 @@ pre>code {
 
 td>code {
   word-break: keep-all !important;
+}
+
+.prose ul, .prose ol {
+  padding-right: 1.625em;
+  padding-left: 0;
+}
+
+/* Flip icons and other LTR elements */
+[dir="rtl"] .icon {
+  transform: scaleX(-1);
 }
