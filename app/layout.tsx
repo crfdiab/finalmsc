@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { Space_Mono, Space_Grotesk } from "next/font/google";
+import { Space_Mono, Space_Grotesk, Readex_Pro } from "next/font/google";
 import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
 
@@ -19,6 +19,8 @@ const monoFont = Space_Mono({
   weight: "400",
 });
 
+const readexPro = Readex_Pro({ subsets: ["arabic"] });
+
 export const metadata: Metadata = {
   title: "AriaDocs - Template",
   metadataBase: new URL("https://ariadocs.vercel.app/"),
@@ -32,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
@@ -41,7 +43,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
+        className={`${sansFont.variable} ${monoFont.variable} ${readexPro.className} font-regular antialiased tracking-wide`}
         suppressHydrationWarning
       >
         <ThemeProvider

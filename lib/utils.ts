@@ -58,8 +58,7 @@ export function formatDate(dateStr: string): string {
     month: "long",
     day: "numeric",
   };
-
-  return date.toLocaleDateString("en-US", options);
+  return date.toLocaleDateString("ar-SA", options);
 }
 
 //  May 23, 2024
@@ -68,11 +67,11 @@ export function formatDate2(dateStr: string): string {
   const date = new Date(year, month - 1, day);
 
   const options: Intl.DateTimeFormatOptions = {
-    month: "short",
+    month: "long",
     day: "numeric",
     year: "numeric",
   };
-  return date.toLocaleDateString("en-US", options);
+  return date.toLocaleDateString("ar-SA", options);
 }
 
 export function stringToDate(date: string) {
